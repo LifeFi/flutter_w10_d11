@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_w10_d11/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,34 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const PomodoroHome(title: 'Pomodoro App'),
-    );
-  }
-}
-
-class PomodoroHome extends StatefulWidget {
-  const PomodoroHome({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<PomodoroHome> createState() => _PomodoroHome();
-}
-
-class _PomodoroHome extends State<PomodoroHome> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: const Center(child: Text("Pomodoro Body")),
-    );
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSwatch(
+              backgroundColor: const Color(0xFFe64d3d),
+            ),
+            textTheme: const TextTheme(
+                displayLarge: TextStyle(
+              color: Colors.white,
+            ))),
+        home: const HomeScreen());
   }
 }
